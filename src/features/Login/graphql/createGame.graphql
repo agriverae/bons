@@ -1,0 +1,28 @@
+mutation CREATE_GAME($user: GameCreateInput!) {
+  createGame(input: $user) {
+    id
+    currentTurn
+    maxTurns
+    turnsLeft
+    player {
+      id
+      name
+      hp
+      maxHp
+      shield
+      cards {
+        id
+        value
+        effect
+      }
+    }
+    monster {
+      id
+      name
+      hp
+      maxHp
+      shield
+      image
+    }
+  }
+}

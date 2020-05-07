@@ -1,0 +1,402 @@
+.button:disabled {
+  background-color: gray;
+}
+
+.button:disabled:hover {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.button:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(255, 255, 255, 0.1);
+}
+
+.button:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
+}
+
+.button.button--dark-shadow:disabled:hover {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.button.button--dark-shadow:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.button.button--dark-shadow:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  top: 0;
+  left: 0;
+  background-color: #323232;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  color: white;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.modal p .text--light {
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.modal .button {
+  text-decoration: none;
+  width: unset;
+  height: unset;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+
+.modal p ~ p {
+  margin-top: 1rem;
+}
+
+.gameboard {
+  padding-top: 11.5rem;
+}
+
+.turns {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #323232;
+  color: white;
+  padding-bottom: 1rem;
+}
+
+.turns .button {
+  padding-top: 0.3rem;
+  width: 90%;
+  margin: 0 auto;
+  outline: none;
+  font-weight: 800;
+}
+
+.turns__title {
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  background-color: #464646;
+}
+
+.turns__content {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-around;
+  border: 1px solid #323232;
+  border-radius: 5px;
+}
+
+.contentDisplay__title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.contentDisplay__description {
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info ~ .info {
+  margin-top: 1rem;
+}
+
+.element {
+  display: flex;
+  background-color: #464646;
+  height: 10rem;
+  max-width: 22rem;
+  width: 90%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.sideContent {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  background-color: #323232;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.5rem 0rem 0.5rem 1.5rem;
+}
+
+.sideContent__title {
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+.sideContent__description {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.element__image-container {
+  width: 55%;
+}
+
+.element__image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.shieldData {
+  color: white;
+  max-width: 13rem;
+  width: 55%;
+  height: 8.5rem;
+  background-color: #464646;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.shieldData h3 {
+  font-weight: 300;
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card.selected {
+  border: 5px solid rgb(51, 233, 172);
+}
+
+.card {
+  background-color: #323232;
+  height: 185px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+  max-width: 14.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-top: 0.7rem;
+}
+
+.card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.card:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.card__image-container {
+  width: 94%;
+  height: 100px;
+  background-color: #505050;
+}
+
+.card__image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.card__description {
+  color: white;
+  font-size: 1.4rem;
+}
+
+.mb {
+  margin-bottom: 1.4rem;
+}
+
+@media screen and (min-width: 650px) {
+  .turns .button {
+    width: 45%;
+    margin: 0 auto;
+  }
+
+  /* INFO */
+  .info {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .info .mb--extra-small {
+    margin-bottom: 0;
+  }
+
+  .shieldData {
+    height: 12rem;
+  }
+
+  .element {
+    height: 12rem;
+  }
+
+  /* CARDLIST */
+
+  .cardList {
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+  }
+
+  .card ~ .card {
+    margin-left: 4%;
+  }
+
+  .card {
+    margin-top: 1.4rem;
+  }
+
+  .info ~ .info {
+    margin-top: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .gameboard {
+    height: 100%;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 2rem 2rem;
+    grid-template-columns: 1fr minmax(46rem, 50rem) 12rem 1fr;
+    grid-template-rows: 1fr min-content max-content 1fr;
+  }
+
+  /* TURNS */
+
+  .turns {
+    position: static;
+    height: auto;
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .turns__title {
+    font-size: 1.85rem;
+  }
+
+  .turns__content {
+    flex-direction: column;
+    margin: 2rem auto;
+    width: 80%;
+    flex-grow: 1;
+    border: 1px solid white;
+    border-radius: 1rem;
+  }
+
+  .turns .button {
+    margin: 2rem auto;
+    width: 70%;
+    font-size: 1.35rem;
+  }
+
+  .contentDisplay__title {
+    font-size: 1rem;
+  }
+
+  .contentDisplay__description {
+    font-size: 2.3rem;
+  }
+
+  /* CARDLIST */
+
+  .cardList {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    justify-content: space-between;
+  }
+
+  .cardList.mb {
+    margin-bottom: 0;
+  }
+
+  .cardList.mt {
+    margin-top: 0;
+  }
+
+  /* INFO */
+
+  .info-group {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .info {
+    justify-content: space-between;
+  }
+
+  .element {
+    max-width: unset;
+    width: 60%;
+  }
+
+  .sideContent__title,
+  .sideContent__description {
+    font-size: 1.5rem;
+  }
+
+  .shieldData {
+    max-width: unset;
+    width: 35%;
+  }
+
+  .shieldData h3 {
+    font-size: 1.5rem;
+  }
+
+  .modal {
+    background-color: #323232;
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: static;
+  }
+}

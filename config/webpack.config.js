@@ -12,8 +12,16 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
+  node: {
+    fs: "empty",
+  },
   module: {
     rules: [
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: "graphql-tag/loader",
+      },
       {
         test: /\.tsx?$/,
         exclude: [/node_modules/, /.test.tsx/],

@@ -59,7 +59,19 @@
   margin-top: 2.4rem;
 }
 
+.mb--small {
+  margin-bottom: 0.7rem;
+}
+
+.mb--extra-small {
+  margin-bottom: 0.35rem;
+}
+
 .button--cyan {
   background-color: #50c0c7;
   color: white;
+}
+
+.text--strong {
+  font-weight: 800;
 }
