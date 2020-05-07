@@ -1,6 +1,18 @@
 import React from "react";
 
-const CharInfo = ({ name, hp, maxHp, shield }) => {
+type CharType = {
+  name: string;
+  hp: number;
+  maxHp: number;
+  shield: number;
+};
+
+const CharInfo: React.FC<CharType> = ({
+  name,
+  hp,
+  maxHp,
+  shield,
+}: CharType) => {
   return (
     <div className="info">
       <div className="element mb--extra-small">

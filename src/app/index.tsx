@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { GameDataType } from "../../shared/types/types";
 import ApolloWrapper from "../../model/index";
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
+import dummyGame from "./dummyData.json";
 import "./styles/normalize.css";
 import "./styles/styles.css";
 
-const App = () => {
-  const [gameData, setGameData] = useState({});
+const App: React.FC = () => {
+  const [gameData, setGameData] = useState<GameDataType>(dummyGame);
 
-  const updateGameData = (gameInfo) => {
+  const updateGameData = (gameInfo: GameDataType): void => {
     setGameData({
       ...gameInfo,
+      monsterEffect: {
+        effect: "",
+        value: 0,
+      },
     });
   };
 

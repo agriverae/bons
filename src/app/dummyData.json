@@ -1,0 +1,42 @@
+{
+  "id": "6c19a6b6-7cd7-4a4d-a2a0-37867e6f4451",
+  "currentTurn": 0,
+  "maxTurns": 20,
+  "turnsLeft": 20,
+  "player": {
+    "id": "c87af7c7-f5ba-4243-908c-31e4f32c46ac",
+    "name": "Ali",
+    "hp": 20,
+    "maxHp": 20,
+    "shield": 0,
+    "cards": [
+      {
+        "id": "d7e0f114-8e73-4ee7-ad73-8f3c24a0b716",
+        "value": 3,
+        "effect": "DAMAGE"
+      },
+      {
+        "id": "5fc10a4f-7910-4f76-bc20-ef99c8f3582c",
+        "value": 5,
+        "effect": "HEAL"
+      },
+      {
+        "id": "66bc795a-d906-4174-865d-4d51d226c210",
+        "value": 3,
+        "effect": "SHIELD"
+      }
+    ]
+  },
+  "monster": {
+    "id": "25d8f13a-bb3f-45bc-bcc0-5dc37aba921f",
+    "name": "Cthulhu",
+    "hp": 40,
+    "maxHp": 40,
+    "shield": 0,
+    "image": "https://vignette.wikia.nocookie.net/lovecraft/images/c/cf/Screenshot_20171018-093500.jpg/revision/latest?cb=20171020174137"
+  },
+  "monsterEffect": {
+    "effect": "",
+    "value": 0
+  }
+}

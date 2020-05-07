@@ -1,9 +1,21 @@
 import React from "react";
 import Modal from "../Modal/Modal";
 
-const MonsterEffect = ({ modalOpen, closeModal, effect, value }) => {
-  return (
-    modalOpen && (
+type Props = {
+  modalOpen: boolean;
+  closeModal: () => void;
+  effect: string;
+  value: number;
+};
+
+const MonsterEffect: React.FC<Props> = ({
+  modalOpen,
+  closeModal,
+  effect,
+  value,
+}: Props) => {
+  if (modalOpen) {
+    return (
       <Modal>
         <h1>Be Careful!!!!</h1>
         <p>
@@ -16,8 +28,10 @@ const MonsterEffect = ({ modalOpen, closeModal, effect, value }) => {
           Continue
         </button>
       </Modal>
-    )
-  );
+    );
+  }
+
+  return null;
 };
 
 export default MonsterEffect;

@@ -1,7 +1,18 @@
 import React from "react";
 import Card from "./Card/Card";
+import { CardType } from "../../../../shared/types/types";
 
-const Cards = ({ cards, onCardSelected, cardSelectedId }) => {
+type CardProps = {
+  cards: CardType[];
+  onCardSelected: (id: string) => void;
+  cardSelectedId: string;
+};
+
+const Cards: React.FC<CardProps> = ({
+  cards,
+  onCardSelected,
+  cardSelectedId,
+}: CardProps) => {
   return (
     <div className="cardList mt mb">
       {cards.map((cardInfo) => (

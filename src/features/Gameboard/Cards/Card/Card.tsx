@@ -3,7 +3,7 @@ import React from "react";
 type Props = {
   id: string;
   effect: string;
-  value: string;
+  value: number;
   selected: boolean;
   onCardSelected: (id: string) => void;
 };

@@ -9,22 +9,28 @@ export type CharacterType = {
   hp: number;
   maxHp: number;
   shield: number;
-  cards?: CardType[];
-  image?: string;
+};
+
+export type PlayerType = CharacterType & {
+  cards: CardType[];
+};
+
+export type MonsterType = CharacterType & {
+  image: string;
 };
 
 export type GameDataType = {
-  gameData: {
-    id: string;
-    turnsLeft: number;
-    currentTurn: number;
-    player: CharacterType;
-    monster: CharacterType;
-    monsterEffect?: MonsterEffectType;
-  };
+  id: string;
+  turnsLeft: number;
+  currentTurn: number;
+  player: PlayerType;
+  monster: MonsterType;
+  monsterEffect: MonsterEffectType;
 };
 
 export type MonsterEffectType = {
   effect: string;
   value: number;
 };
+
+export type updateGameType = (gameInfo: GameDataType) => void;

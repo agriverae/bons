@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { gql } from "apollo-boost";
 import { useMutation } from "@apollo/react-hooks";
 import GameEnd from "./GameEnd/GameEnd";
+import NEXT_TURN from "./graphql/nextTurn.graphql";
 import MonsterEffect from "./MonsterEffect/MonsterEffect";
 import Cards from "./Cards/Cards";
 import CharInfo from "./CharInfo/CharInfo";
@@ -9,50 +9,12 @@ import Turns from "./Turns/Turns";
 import { GameDataType } from "../../../shared/types/types";
 import "./styles.css";
 
-const NEXT_TURN = gql`
-  mutation NEXT_TURN($gameInfo: GameNextTurnInput!) {
-    nextTurn(input: $gameInfo) {
-      game {
-        id
-        currentTurn
-        maxTurns
-        turnsLeft
-        player {
-          id
-          name
-          hp
-          maxHp
-          shield
-          cards {
-            id
-            value
-            effect
-          }
-        }
-        monster {
-          id
-          name
-          hp
-          maxHp
-          shield
-          image
-        }
-      }
-      monsterEffect {
-        effect
-        value
-      }
-    }
-  }
-`;
-const Gameboard: React.FC<GameDataType> = ({ gameData }: GameDataType) => {
-  const [gameInfo, setGameInfo] = useState({
-    ...gameData,
-    monsterEffect: {
-      effect: "",
-      value: "",
-    },
-  });
+type PropType = {
+  gameData: GameDataType;
+};
+
+const Gameboard: React.FC<PropType> = ({ gameData }: PropType) => {
+  const [gameInfo, setGameInfo] = useState<GameDataType>(gameData);
   const [nextTurn] = useMutation(NEXT_TURN);
   const [card, setCard] = useState({
     selected: false,

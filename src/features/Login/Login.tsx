@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import { useHistory } from "react-router-dom";
+import { updateGameType } from "../../../shared/types/types";
 import CREATE_GAME from "./graphql/createGame.graphql";
 import "./styles.css";
 
-const Login = ({ updateGameData }) => {
+type LoginProps = {
+  updateGameData: updateGameType;
+};
+
+const Login: React.FC<LoginProps> = ({ updateGameData }: LoginProps) => {
   const [name, setName] = useState("");
   const history = useHistory();
   const [createGame] = useMutation(CREATE_GAME);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent): Promise<any> => {
     e.preventDefault();
     const response = await createGame({
       variables: {
@@ -18,22 +23,24 @@ const Login = ({ updateGameData }) => {
         },
       },
     });
-    // Falta tirar un error si algo pasa
     updateGameData(response.data.createGame);
     history.push("/gameboard");
   };
+
+  const changeName = (e: ChangeEvent<HTMLInputElement>): void =>
+    setName(e.target.value);
 
   return (
     <div className="login">
       <form className="form" onSubmit={handleSubmit}>
         <h1 className="form__title">Welcome to Bons Game</h1>
         <label htmlFor="name" className="form__name mt--small">
-          What's your name?
+          What&apos;s your name?
         </label>
         <input
           id="name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={changeName}
           placeholder="NAME"
           name="name"
           type="text"
@@ -44,7 +51,7 @@ const Login = ({ updateGameData }) => {
           type="submit"
           className="button button--dark-shadow mt--small button--cyan"
         >
-          Let's Play
+          Let&apos;s Play
         </button>
       </form>
     </div>
