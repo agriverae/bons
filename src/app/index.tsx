@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { GameDataType } from "../../shared/types/types";
 import ApolloWrapper from "../../model/index";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Routes from "./Routes";
 import dummyGame from "./dummyData.json";
 import "./styles/normalize.css";
@@ -10,8 +10,10 @@ import "./styles/styles.css";
 
 const App: React.FC = () => {
   const [gameData, setGameData] = useState<GameDataType>(dummyGame);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   const updateGameData = (gameInfo: GameDataType): void => {
+    setIsLoggedIn(true);
     setGameData({
       ...gameInfo,
       monsterEffect: {
@@ -23,9 +25,13 @@ const App: React.FC = () => {
 
   return (
     <main className="app">
-      <BrowserRouter>
-        <Routes updateGameData={updateGameData} gameData={gameData} />
-      </BrowserRouter>
+      <HashRouter>
+        <Routes
+          isLoggedIn={isLoggedIn}
+          updateGameData={updateGameData}
+          gameData={gameData}
+        />
+      </HashRouter>
     </main>
   );
 };

@@ -23,7 +23,6 @@ const Gameboard: React.FC<PropType> = ({ gameData }: PropType) => {
   const [modalOpen, setModalOpen] = useState(false);
   const { player, monster, monsterEffect } = gameInfo;
 
-  const closeModal = (): void => setModalOpen(false);
   const openModal = (): void => setModalOpen(true);
 
   const endTurn = async (): Promise<any> => {
@@ -49,6 +48,13 @@ const Gameboard: React.FC<PropType> = ({ gameData }: PropType) => {
     });
 
     openModal();
+  };
+
+  const closeModal = (isTurnEnd: boolean): void => {
+    setModalOpen(false);
+    if (isTurnEnd) {
+      endTurn();
+    }
   };
 
   const onCardSelected = (id: string): void => {

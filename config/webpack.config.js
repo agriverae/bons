@@ -3,6 +3,8 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+if (module.hot) module.hot.accept();
+
 module.exports = {
   entry: "./src/app/index.tsx",
   output: {

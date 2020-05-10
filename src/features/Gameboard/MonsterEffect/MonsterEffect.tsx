@@ -3,7 +3,7 @@ import Modal from "../Modal/Modal";
 
 type Props = {
   modalOpen: boolean;
-  closeModal: () => void;
+  closeModal: (isTurnEnd: boolean) => void;
   effect: string;
   value: number;
 };
@@ -14,6 +14,14 @@ const MonsterEffect: React.FC<Props> = ({
   effect,
   value,
 }: Props) => {
+  const onClickFunc = () => {
+    if (effect.toLowerCase() === "horror") {
+      closeModal(true);
+    } else {
+      closeModal(false);
+    }
+  };
+
   if (modalOpen) {
     return (
       <Modal>
@@ -24,7 +32,7 @@ const MonsterEffect: React.FC<Props> = ({
         <p id="value">
           <span className="text--light">Value:</span> {value}
         </p>
-        <button className="button button--cyan" onClick={closeModal}>
+        <button className="button button--cyan" onClick={onClickFunc}>
           Continue
         </button>
       </Modal>
