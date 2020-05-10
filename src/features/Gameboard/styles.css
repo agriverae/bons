@@ -64,6 +64,10 @@
   font-size: 2rem;
 }
 
+.modal h1.text--red {
+  color: red;
+}
+
 .modal .button {
   text-decoration: none;
   width: unset;
@@ -279,12 +283,9 @@
     flex-wrap: wrap-reverse;
   }
 
-  .card ~ .card {
-    margin-left: 4%;
-  }
-
   .card {
     margin-top: 1.4rem;
+    margin-left: 4%;
   }
 
   .info ~ .info {
@@ -353,10 +354,16 @@
 
   .cardList.mb {
     margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .cardList.mt {
     margin-top: 0;
+  }
+
+  .card {
+    margin-left: 0;
   }
 
   /* INFO */
@@ -364,10 +371,6 @@
   .info-group {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-  }
-
-  .card ~ .card {
-    margin-left: 0;
   }
 
   .info {

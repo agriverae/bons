@@ -3,7 +3,7 @@ import Modal from "../Modal/Modal";
 
 type Props = {
   modalOpen: boolean;
-  closeModal: (isTurnEnd: boolean) => void;
+  closeModal: (close: boolean) => void;
   effect: string;
   value: number;
 };
@@ -14,24 +14,35 @@ const MonsterEffect: React.FC<Props> = ({
   effect,
   value,
 }: Props) => {
-  const onClickFunc = () => {
-    if (effect.toLowerCase() === "horror") {
-      closeModal(true);
-    } else {
-      closeModal(false);
-    }
+  let render = (
+    <>
+      <h1>Be Careful!!!!</h1>
+      <p id="effect">
+        <span className="text--light">Monster Effect:</span> {effect}
+      </p>
+      <p id="value">
+        <span className="text--light">Value:</span> {value}
+      </p>
+    </>
+  );
+
+  if (effect.toLowerCase() === "horror") {
+    render = (
+      <>
+        <h1 className="text--red">You lost your turn</h1>
+        <p>you run away in fear!!</p>
+      </>
+    );
+  }
+
+  const onClickFunc = (): void => {
+    closeModal(effect.toLowerCase() !== "horror");
   };
 
   if (modalOpen) {
     return (
       <Modal>
-        <h1>Be Careful!!!!</h1>
-        <p id="effect">
-          <span className="text--light">Monster Effect:</span> {effect}
-        </p>
-        <p id="value">
-          <span className="text--light">Value:</span> {value}
-        </p>
+        {render}
         <button className="button button--cyan" onClick={onClickFunc}>
           Continue
         </button>

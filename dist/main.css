@@ -142,6 +142,10 @@
   font-size: 2rem;
 }
 
+.modal h1.text--red {
+  color: red;
+}
+
 .modal .button {
   text-decoration: none;
   width: unset;
@@ -357,12 +361,9 @@
     flex-wrap: wrap-reverse;
   }
 
-  .card ~ .card {
-    margin-left: 4%;
-  }
-
   .card {
     margin-top: 1.4rem;
+    margin-left: 4%;
   }
 
   .info ~ .info {
@@ -391,6 +392,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    max-height: 663.5px;
   }
 
   .turns__title {
@@ -430,10 +432,16 @@
 
   .cardList.mb {
     margin-bottom: 0;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .cardList.mt {
     margin-top: 0;
+  }
+
+  .card {
+    margin-left: 0;
   }
 
   /* INFO */
@@ -468,14 +476,11 @@
 
   .modal {
     background-color: #323232;
-    grid-column: 2 / 4;
-    grid-row: 2 / 4;
     z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: static;
   }
 }
 

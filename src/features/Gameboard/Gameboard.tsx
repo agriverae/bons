@@ -50,9 +50,11 @@ const Gameboard: React.FC<PropType> = ({ gameData }: PropType) => {
     openModal();
   };
 
-  const closeModal = (isTurnEnd: boolean): void => {
-    setModalOpen(false);
-    if (isTurnEnd) {
+  const closeModal = (close: boolean): void => {
+    console.log(close);
+    if (close) {
+      setModalOpen(false);
+    } else {
       endTurn();
     }
   };
