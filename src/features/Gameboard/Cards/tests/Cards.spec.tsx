@@ -1,12 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Cards from "../Cards";
-import mockCards from "./cards.json";
+import mockData from "./mockData.json";
 
 const mockCallback = jest.fn();
 
 const wrapper = shallow(
-  <Cards cards={mockCards} onCardSelected={mockCallback} cardSelectedId={"1"} />
+  <Cards cards={mockData} onCardSelected={mockCallback} cardSelectedId={"1"} />
 );
 
 describe("When cards component is rendered", () => {

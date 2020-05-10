@@ -1,25 +1,25 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Card from "../Card";
-import data from "./card.json";
+import mockData from "./mockData.json";
 
 const mockCallback = jest.fn();
 
 const wrapper = shallow(
   <Card
-    id={data.id}
-    effect={data.effect}
-    value={data.value}
-    selected={data.selected}
+    id={mockData.id}
+    effect={mockData.effect}
+    value={mockData.value}
+    selected={mockData.selected}
     onCardSelected={mockCallback}
   />
 );
 
 const wrapperSelected = shallow(
   <Card
-    id={data.id}
-    effect={data.effect}
-    value={data.value}
+    id={mockData.id}
+    effect={mockData.effect}
+    value={mockData.value}
     selected={true}
     onCardSelected={mockCallback}
   />
@@ -28,7 +28,7 @@ const wrapperSelected = shallow(
 describe("Renders Component Card", () => {
   it("renders effect and value", () => {
     expect(wrapper.find(".card__description").text()).toBe(
-      `${data.effect}: ${data.value}`
+      `${mockData.effect}: ${mockData.value}`
     );
   });
 

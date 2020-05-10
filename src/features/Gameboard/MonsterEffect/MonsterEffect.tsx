@@ -18,10 +18,10 @@ const MonsterEffect: React.FC<Props> = ({
     return (
       <Modal>
         <h1>Be Careful!!!!</h1>
-        <p>
+        <p id="effect">
           <span className="text--light">Monster Effect:</span> {effect}
         </p>
-        <p>
+        <p id="value">
           <span className="text--light">Value:</span> {value}
         </p>
         <button className="button button--cyan" onClick={closeModal}>

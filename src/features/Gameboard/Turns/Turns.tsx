@@ -19,17 +19,21 @@ const Turns: React.FC<TurnsType> = ({
       <div className="turns__content">
         <div className="contentDisplay">
           <h3 className="contentDisplay__title">currrent</h3>
-          <p className="contentDisplay__description">{currentTurn}</p>
+          <p id="currentTurn" className="contentDisplay__description">
+            {currentTurn}
+          </p>
         </div>
         <div className="contentDisplay">
           <h3 className="contentDisplay__title">Past</h3>
-          <p className="contentDisplay__description">
+          <p id="previousTurn" className="contentDisplay__description">
             {!currentTurn ? currentTurn : currentTurn - 1}
           </p>
         </div>
         <div className="contentDisplay">
           <h3 className="contentDisplay__title">Left</h3>
-          <p className="contentDispla9, y__description">{turnsLeft}</p>
+          <p id="turnsLeft" className="contentDisplay__description">
+            {turnsLeft}
+          </p>
         </div>
       </div>
       <button
