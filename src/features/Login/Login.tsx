@@ -44,6 +44,7 @@ const Login: React.FC<LoginProps> = ({ updateGameData }: LoginProps) => {
           placeholder="NAME"
           name="name"
           type="text"
+          data-testid="name"
           className="form__text mt--big"
         />
         <button
