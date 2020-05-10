@@ -1,10 +1,12 @@
 import React from "react";
+import defaultImage from "../../../../shared/images/defaultImage.jpg";
 
 type CharType = {
   name: string;
   hp: number;
   maxHp: number;
   shield: number;
+  image?: string;
 };
 
 const CharInfo: React.FC<CharType> = ({
@@ -12,14 +14,15 @@ const CharInfo: React.FC<CharType> = ({
   hp,
   maxHp,
   shield,
+  image,
 }: CharType) => {
   return (
     <div className="info">
       <div className="element mb--extra-small">
         <div className="element__image-container">
           <img
-            src={`../../../shared/images/${name.toLowerCase()}.jpg`}
-            alt={`${name.toLowerCase()}`}
+            src={image ? image : defaultImage}
+            alt={name}
             className="element__image"
           />
         </div>

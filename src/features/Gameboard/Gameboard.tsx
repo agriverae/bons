@@ -82,6 +82,7 @@ const Gameboard: React.FC<PropType> = ({ gameData }: PropType) => {
           hp={monster.hp}
           maxHp={monster.maxHp}
           shield={monster.shield}
+          image={monster.image}
         />
         <CharInfo
           name={player.name}

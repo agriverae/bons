@@ -32,6 +32,17 @@ describe("Renders Component Card", () => {
     );
   });
 
+  it("displays image depending of effect", () => {
+    expect(
+      wrapper.containsMatchingElement(
+        <img
+          src={`../../../shared/images/${mockData.effect}.jpg`}
+          alt={mockData.effect}
+        />
+      )
+    ).toBe(true);
+  });
+
   it("Function called on card click", () => {
     wrapper.find(".card").simulate("click");
     expect(mockCallback.mock.calls.length).toBe(1);

@@ -9,6 +9,7 @@ const wrapper = shallow(
     hp={mockData.hp}
     maxHp={mockData.maxHp}
     shield={mockData.shield}
+    image={mockData.image}
   />
 );
 
@@ -29,7 +30,28 @@ describe("When CharInfo Renders", () => {
     );
   });
 
-  it("Displays the correct image", () => {
-    expect(true).toBe(false);
+  it("Displays image provided", () => {
+    expect(
+      wrapper.containsMatchingElement(
+        <img src={mockData.image} alt={mockData.name} />
+      )
+    ).toBe(true);
+  });
+
+  it("Displays default image, if no image is provided", () => {
+    const wrapperSpecial = shallow(
+      <CharInfo
+        name={mockData.name}
+        hp={mockData.hp}
+        maxHp={mockData.maxHp}
+        shield={mockData.shield}
+      />
+    );
+
+    expect(
+      wrapperSpecial.containsMatchingElement(
+        <img src="defaultImage.jpg" alt={mockData.name} />
+      )
+    ).toBe(true);
   });
 });

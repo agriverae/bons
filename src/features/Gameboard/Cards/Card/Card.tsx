@@ -22,7 +22,7 @@ const Card: React.FC<Props> = ({
       <div className="card__image-container">
         <img
           src={`../../../shared/images/${effect.toLowerCase()}.jpg`}
-          alt="Heal"
+          alt={effect}
         />
       </div>
       <p className="card__description mt">
